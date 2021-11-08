@@ -1,0 +1,14 @@
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  height: 50px;
+  width: 50px;
+}
+.even_pattern {
+  background-color: black;
+}
+.odd_pattern {
+  background-color: white;
+}
