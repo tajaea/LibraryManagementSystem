@@ -7,17 +7,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "HSform1.css"/>
+    <link rel = "stylesheet" href = "../css/HSform1.css"/>
     <title>Add Book</title>
 </head>
 <body>
     <section>
     <div class="circle"></div>
     <header>
-		<img src = "images/logo.png" class = "logo">
+		<img src = "../images/logo.png" class = "logo">
         <ul>
-            <li><a href = "HSindex.php" name = "home" id = "home">Home</a></li>
-            <li><a href = "HSlogout.php">Log-Out</a></li>
+            <li><a href = "../pages/HSindex.php" name = "home" id = "home">Home</a></li>
+            <li><a href = "../pages/HSlogout.php">Log-Out</a></li>
         </ul>        
 	</header>
     <div class = "container">
@@ -25,14 +25,14 @@
             <h3>Add Book</h3>
             <span id = "error">
                 <?php
-                    if(!empty($_SESSION['error']))
+                    if(!empty($_SESSION['addbook_error']))
                     {
-                        echo $_SESSION['error'];
-                        unset($_SESSION['error']);
+                        echo $_SESSION['addbook_error'];
+                        unset($_SESSION['addbook_error']);
                     }
                 ?>
             </span>            
-            <form action = "HSaddbook_validate.php" method = "POST" enctype = "multipart/form-data">
+            <form action = "../validation/HSaddbook_validate.php" method = "POST" enctype = "multipart/form-data">
                 <label>Title: <span>*</span></label>
                 <input name = "title" id = "title" type = "text" placeholder = "Rich Dad Poor Dad">
                 <label>Author: <span>*</span></label>
@@ -46,7 +46,7 @@
             </form>
         </div>
         <div class="imagebox">
-            <img src = "images/psc.png" class = "book1">
+            <img src = "../images/psc.png" class = "book1">
         </div>
     </div>
     </section> 

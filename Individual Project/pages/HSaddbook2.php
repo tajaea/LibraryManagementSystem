@@ -8,16 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
-    <link rel = "stylesheet" href = "HSform2.css"/>
+    <link rel = "stylesheet" href = "../css/HSform2.css"/>
 </head>
 <body>
     <section>
     <div class="circle"></div>
     <header>
-		<img src = "images/logo.png" class = "logo">
+		<img src = "../images/logo.png" class = "logo">
         <ul>
-            <li><a href = "HSindex.php">Home</a></li>
-            <li><a href = "HSlogout.php">Log-Out</a></li>
+            <li><a href = "../pages/HSindex.php">Home</a></li>
+            <li><a href = "../pages/HSlogout.php">Log-Out</a></li>
         </ul>        
 	</header>    
     <div class = "container">
@@ -25,14 +25,14 @@
             <h3>Add Book</h3>
             <span id = "error">
                 <?php
-                    if(!empty($_SESSION['error_page2']))
+                    if(!empty($_SESSION['addbook2_error']))
                     {
-                        echo $_SESSION['error_page2'];
-                        unset($_SESSION['error_page2']);
+                        echo $_SESSION['addbook2_error'];
+                        unset($_SESSION['addbook2_error']);
                     }
                 ?>
             </span>
-            <form action = "HSaddbook_validate2.php" method = "POST">
+            <form action = "../validation/HSaddbook_validate2.php" method = "POST" enctype = "multipart/form-data">
                 <label>ISBN: <span>*</span></label>
                 <input name = "isbn" id = "isbn" type = "text" placeholder = "978-3-16-148410-0">
                 <label>Call Number: <span>*</span></label>
@@ -47,7 +47,7 @@
             </form>
         </div>
         <div class="imagebox">
-            <img src = "images/ifd.png" class = "book1">
+            <img src = "../images/ifd.png" class = "book1">
         </div>
     </div>
     </section> 

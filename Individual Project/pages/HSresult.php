@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "HSresult.css"/>
+    <link rel = "stylesheet" href = "../css/HSresult.css"/>
     <title>Summary</title>
 </head>
 <body>
     <header>
-		<img src = "images/logo.png" class = "logo">
+		<img src = "../images/logo.png" class = "logo">
 	</header>
         <table class= "table">
             <thead>
