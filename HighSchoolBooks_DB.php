@@ -1,7 +1,7 @@
 <?php
     $dbserver = "localhost";
-    $dbusername = "tajaea";
-    $dbpassword = "@v3Nt@d0R";
+    $dbusername = "root";
+    $dbpassword = "";
     $dbas = "hsregistration";
 
     try{
