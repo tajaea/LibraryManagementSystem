@@ -16,10 +16,10 @@ if (isset($_POST['login'])) {
         if ($result->num_rows > 0) {
             $row = mysqli_fetch_assoc($result);
             //$_SESSION['username'] = $row['username'];
-            if ($row['type'] == "Administrator") {
+            if ($row['type'] == "Librarian") {
                 header("location:../pages/HSaddbook.php");
-            } else {
-                header("location:../pages/HSaddbook2.php");
+            } else if($row['type'] == "Administrator") {
+                header("location:../pages/HSadministrator.php");
             }
         } else {
             $_SESSION['login_error'] = "* Email or Password Is Incorrect.";
