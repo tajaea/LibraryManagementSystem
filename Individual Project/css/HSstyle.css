@@ -60,15 +60,12 @@ header ul li a {
   line-height: 1.4em;
   font-weight: 500;
 }
-.content .textbox.h2 span {
+.content .textbox span {
   color: red;
   font-size: 1.2em;
   font-weight: 900;
 }
-/*.content .textbox p {
-  color: black;
-  
-}*/
+
 .content .imagebox {
   width: 600px;
   display: flex;
@@ -172,12 +169,12 @@ header ul li a {
   display: block;
   text-transform: capitalize;
 }
-#error {
+.login-container #error {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-span {
+.login-container span {
   color: red;
 }
 .login-container .login-form .input-group {
@@ -266,6 +263,16 @@ span {
   text-decoration: none;
   color: #1148b0;
 }
+.guest-text {
+  color: black;
+  font-weight: 600;
+  position: relative;
+  top: 55px;
+}
+.guest-text a {
+  text-decoration: none;
+  color: #1148b0;
+}
 
 /*registration page*/
 .register-body header {
@@ -285,7 +292,6 @@ span {
 .register-body {
   width: 100%;
   min-height: 100vh;
-  /*background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(bg.jpg);*/
   background-position: center;
   background-size: cover;
   display: flex;
@@ -329,12 +335,12 @@ span {
   display: block;
   text-transform: capitalize;
 }
-#error {
+.register-container #error {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-span {
+.register-container span {
   color: red;
 }
 .register-container .register-form .input-group {
@@ -357,6 +363,7 @@ span {
 .register-container .register-form .input-group input:valid {
   border-color: #1365b8;
 }
+
 .register-container .register-form .input-group .btn {
   display: block;
   width: 100%;
