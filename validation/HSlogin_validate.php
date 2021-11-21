@@ -10,13 +10,17 @@ if (isset($_POST['login'])) {
         setcookie('email', $email, time() + (60 * 60 * 7));
         setcookie('password', $password, time() + (60 * 60 * 7));
 
-        $query = "SELECT * FROM user WHERE email='$email'";
+        $query = "SELECT * FROM librarian WHERE email='$email'";
         $result = mysqli_query($conn, $query);
 
         if ($result->num_rows > 0) {
             $row = mysqli_fetch_assoc($result);
-            $_SESSION['username'] = $row['username'];
-            header("location:../pages/HSaddbook.php");
+            //$_SESSION['username'] = $row['username'];
+            if ($row['type'] == "Administrator") {
+                header("location:../pages/HSaddbook.php");
+            } else {
+                header("location:../pages/HSaddbook2.php");
+            }
         } else {
             $_SESSION['login_error'] = "* Email or Password Is Incorrect.";
             header("location:../pages/HSlogin.php");

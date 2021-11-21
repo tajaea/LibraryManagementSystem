@@ -4,8 +4,7 @@ session_start();
 
 if (isset($_POST['register'])) {
     if (
-        empty($_POST['username'])
-        || empty($_POST['name'])
+        empty($_POST['name'])
         || empty($_POST['email'])
         || empty($_POST['atype'])
         || empty($_POST['password'])
@@ -17,7 +16,6 @@ if (isset($_POST['register'])) {
         $_POST['email'] = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             if (($_POST['password']) == ($_POST['cpassword'])) {
-                $username = $_POST['username'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $type = $_POST['atype'];
@@ -30,7 +28,7 @@ if (isset($_POST['register'])) {
             $_SESSION['registration_error'] = "Invalid Email.";
             header("location:../pages/HSregistration.php");
         }
-        $query = "INSERT INTO user (username, name, email, type, password) VALUES ('$username', '$name', '$email', '$type', '$password')";
+        $query = "INSERT INTO librarian (name, email, password, type) VALUES ('$name', '$email', '$password', '$type')";
         if (mysqli_query($conn, $query)) {
             header("location:../pages/HSlogin.php");
         } else {

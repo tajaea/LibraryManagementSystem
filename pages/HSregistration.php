@@ -35,9 +35,6 @@ session_start();
 				<form action="../validation/HSregister_validate.php" method="POST" class="register-form">
 					<h2>Register</h2>
 					<div class="input-group">
-						<input name="username" id="username" type="text" placeholder="Username" />
-					</div>
-					<div class="input-group">
 						<input name="name" id="name" type="text" placeholder="Name" />
 					</div>
 					<div class="input-group">
@@ -46,7 +43,6 @@ session_start();
 					<label>Account Type</label>
 					<select name="atype" id="atype">
 						<option value="">Choose One</option>
-						<option value="Patrons">Patrons</option>
 						<option value="Libarians">Libarians</option>
 						<option value="Administrator">Administrator</option>
 					</select>
