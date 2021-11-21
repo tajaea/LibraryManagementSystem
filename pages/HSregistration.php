@@ -44,6 +44,7 @@ session_start();
 					<select name="atype" id="atype">
 						<option value="">Choose One</option>
 						<option value="Libarian">Libarians</option>
+						<option value="Patron">Patrons</option>
 						<option value="Administrator">Administrator</option>
 					</select>
 					<div class="input-group">
