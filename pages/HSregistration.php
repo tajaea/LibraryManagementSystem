@@ -17,6 +17,9 @@ session_start();
 		<div class="circle"></div>
 		<header>
 			<img src="../images/logo.png" class="logo">
+			<ul>
+				<li><a href="../pages/HSindex.php">Home</a></li>
+			</ul>
 		</header>
 
 		<div class="content">
@@ -38,7 +41,7 @@ session_start();
 						<input name="name" id="name" type="text" placeholder="Name" />
 					</div>
 					<div class="input-group">
-						<input name="email" id="email" type="text" placeholder="email" />
+						<input name="email" id="email" type="text" placeholder="Email" />
 					</div>
 					<label>Account Type</label>
 					<select name="atype" id="atype">
@@ -48,21 +51,19 @@ session_start();
 						<option value="Administrator">Administrator</option>
 					</select>
 					<div class="input-group">
-						<label>Password</label>
-						<input name="password" id="password" type="password" placeholder="********" />
+						<input name="password" id="password" type="password" placeholder="Password" />
 					</div>
 					<div class="input-group">
-						<label>Confirm Password</label>
-						<input name="cpassword" id="cpassword" type="password" placeholder="********" />
+						<input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" />
 					</div>
 					<div class="input-group">
 						<button name="register" id="register" type="Submit" class="btn">Register</button>
 					</div>
-					<p class="register-text">Have An Account?<a href="../pages/HSlogin.php"> Login Here</a></p>
+					<p class="register-text-body">Have An Account?<a href="../pages/HSlogin.php"> Login Here</a></p>
 				</form>
 			</div>
 			<div class="imagebox">
-				<img src="../images/bm.png" class="book1">
+				<img src="../images/wbw.jpg" class="book1">
 			</div>
 		</div>
 	</section>

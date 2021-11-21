@@ -17,6 +17,9 @@ session_start();
 		<div class="circle"></div>
 		<header>
 			<img src="../images/logo.png" class="logo">
+			<ul>
+				<li><a href="../pages/HSindex.php">Home</a></li>
+			</ul>
 		</header>
 		<div class="content">
 			<div class="login-container">
