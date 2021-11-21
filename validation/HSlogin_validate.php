@@ -9,7 +9,7 @@ if (isset($_POST['login'])) {
     if (isset($_POST['remember'])) {
         setcookie('email', $email, time() + (60 * 60 * 7));
         setcookie('password', $password, time() + (60 * 60 * 7));
-
+    }
         $query = "SELECT * FROM librarian WHERE email='$email'";
         $result = mysqli_query($conn, $query);
 
@@ -25,5 +25,4 @@ if (isset($_POST['login'])) {
             $_SESSION['login_error'] = "* Email or Password Is Incorrect.";
             header("location:../pages/HSlogin.php");
         }
-    }
 }

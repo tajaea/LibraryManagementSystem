@@ -43,7 +43,7 @@ session_start();
 					<label>Account Type</label>
 					<select name="atype" id="atype">
 						<option value="">Choose One</option>
-						<option value="Libarians">Libarians</option>
+						<option value="Libarian">Libarians</option>
 						<option value="Administrator">Administrator</option>
 					</select>
 					<div class="input-group">
