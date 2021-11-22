@@ -1,6 +1,8 @@
 <?php
     session_start();
+//testing
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
