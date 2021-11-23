@@ -19,15 +19,12 @@ session_start();
                     $_SESSION['addbook2_error'] = "XX000.X0.X00 0000 is required.";
                     header("location:../pages/HSaddbook2.php");
                 }else {
-                    /*$_SESSION['isbn'] = $_POST['isbn'];
+                    $_SESSION['isbn'] = $_POST['isbn'];
                     $_SESSION['call_number'] = $_POST['call_number'];
                     $_SESSION['subject_area'] = $_POST['subject_area'];
                     $_SESSION['num_of_copies'] = $_POST['num_of_copies'];
-                    header("location:../pages/HSresult.php");*/
-                    foreach($_POST as $Key => $value)
-                    {
-                        $_SESSION['POST'][$key] = $value;
-                    }
+                    //header("location:../pages/HSresult.php");
+                    
                 }               
             }
         } 
