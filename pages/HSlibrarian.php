@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/HSdashboard.css" />
+    <link rel="stylesheet" href="../css/HSlibdashboard.css" />
     <title>Librarian Dashboard</title>
 </head>
 
@@ -42,21 +42,36 @@
                 <div class="addbook-section">
                     <div class="title">
                         <h2>Add Book</h2>
-                        <button type="submit" class="addbutton" name="addbook-button" <?php if (isset($_POST['addbook-button'])) {
-                                                                                            //include('../pages/HSaddbook.php');
-                                                                                            header("location:../pages/HSaddbook.php");
-                                                                                        } ?>><span class="addtext">Add</span>
-                            <span class="addicon">
-                                <ion-icon name="add-outline"></ion-icon>
-                            </span></button>
                     </div>
+                    <div class="addbook-image">
+                        <img src="../images/book.png" alt="">
+                    </div>
+                    <button type="submit" class="addbutton" name="addbook-button" <?php if (isset($_POST['addbook-button'])) {
+                                                                                        //include('../pages/HSaddbook.php');
+                                                                                        header("location:../pages/HSaddbook.php");
+                                                                                    } ?>>
+                        <span class="addtext">Add</span>
+                        <span class="addicon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                    </button>
                 </div>
-                <div class="search-section">
-                    <h2>Book Details</h2>
-                    <button type="submit" name="details-button" <?php if (isset($_POST['details-button'])) {
-                                                                    //include('../pages/HSaddbook.php');
-                                                                    header("location:../pages/HSresult.php");
-                                                                } ?>>Details</button>
+                <div class="details-section">
+                    <div class="title">
+                        <h2>Book Details</h2>
+                    </div>
+                    <div class="details-image">
+                        <img src="../images/info.png" alt="">
+                    </div>
+                    <button type="submit" class="detailsbutton" name="details-button" <?php if (isset($_POST['details-button'])) {
+                                                                                            //include('../pages/HSaddbook.php');
+                                                                                            header("location:../pages/HSresult.php");
+                                                                                        } ?>>
+                        <span class="detailstext">Details</span>
+                        <span class="detailsicon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>

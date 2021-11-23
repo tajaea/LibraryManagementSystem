@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+h1,
+h2 {
+  color: black;
+}
+.btn {
+  background: #6082b6;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+}
+.btn:hover {
+  color: white;
+  background: red;
+  padding: 3px 8px;
+  border: 2px solid #71797e;
+}
+.side-menu {
+  position: fixed;
+  background: #4682b4;
+  width: 20vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.side-menu .brand-name {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side-menu li {
+  font-size: 24px;
+  padding: 10px 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.side-menu li:hover {
+  background: white;
+  color: #f05462;
+}
+.container {
+  position: absolute;
+  right: 0;
+  width: 80vw;
+  height: 100vh;
+  background: #e5e4e2;
+}
+.container .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 10vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container .header .logo {
+  position: relative;
+  max-width: 104px;
+}
+.container .header .nav {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.container .header .nav .search {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+}
+.container .header .nav .search[type="text"] {
+  border: none;
+  background: #f1f1f1;
+  padding: 10px;
+  width: 50%;
+}
+.container .header .nav .search .searchbutton {
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .header .nav .search .searchbutton img {
+  width: 30px;
+  height: 30px;
+}
+.container .header .nav .user {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .header .nav .user .user-image {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.container .header .nav .user .user-image img {
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 100%;
+  height: 100%;
+}
+.container .content {
+  min-height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  top: 150px;
+}
+.container .content .addbook-section {
+  min-height: 50vh;
+  flex: 2;
+  background: #f0ffff;
+  margin: 0 25px 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+}
+.container .content .addbook-section .title {
+  position: relative;
+  left: 42%;
+  top: 35px;
+}
+.container .content .addbook-section .title h2 {
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: 400px;
+}
+.container .content .addbook-section .addbook-image {
+  height: 25%;
+  width: 49%;
+  position: fixed;
+  left: 34%;
+  top: 270px;
+}
+.container .content .addbook-section .addbook-image img {
+  height: 220px;
+  width: 220px;
+}
+.container .content .addbook-section .addbutton {
+  display: inline-flex;
+  height: 70px;
+  width: 250px;
+  position: fixed;
+  left: 34%;
+  top: 550px;
+  padding: 0;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .content .addbook-section .addbutton:active {
+  background: #006e58;
+}
+.container .content .addbook-section .addbutton:hover {
+  background: #008168;
+}
+.container .content .addbook-section .addbutton .addtext,
+.container .content .addbook-section .addbutton .addicon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+.container .content .addbook-section .addbutton .addicon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}
+.container .content .details-section {
+  min-height: 50vh;
+  flex: 2;
+  background: #f0ffff;
+  margin: 0 25px 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+}
+.container .content .details-section .title {
+  position: relative;
+  left: 42%;
+  top: 35px;
+}
+.container .content .details-section .title h2 {
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: 400px;
+}
+.container .content .details-section .details-image {
+  height: 25%;
+  width: 49%;
+  position: fixed;
+  left: 76%;
+  top: 270px;
+}
+.container .content .details-section .details-image img {
+  height: 220px;
+  width: 220px;
+}
+.container .content .details-section .detailsbutton {
+  display: inline-flex;
+  height: 70px;
+  width: 250px;
+  position: fixed;
+  left: 76%;
+  top: 550px;
+  padding: 0;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .content .details-section .detailsbutton:active {
+  background: #006e58;
+}
+.container .content .details-section .detailsbutton:hover {
+  background: #008168;
+}
+.container .content .details-section .detailsbutton .detailstext,
+.container .content .details-section .detailsbutton .detailsicon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+.container .content .details-section .detailsbutton .detailsicon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}
