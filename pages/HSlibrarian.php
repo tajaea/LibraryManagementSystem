@@ -17,9 +17,8 @@
             </div>
             <ul>
                 <li><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>
-                <!--<li><img src="../images/document.png" alt="">&nbsp; Data Entry</li>-->
                 <li><img src="../images/search.png" alt=""> Search Library Card</li>
-                <!--<li><img src="../images/system-update.png" alt="">&nbsp; Book Details</li>-->
+                <li><a href="../pages/HSsettings.php"><img src="../images/search.png" alt="">&nbsp; Settings</a></li>
             </ul>
         </div>
         <div class="container">
