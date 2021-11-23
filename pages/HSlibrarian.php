@@ -42,7 +42,7 @@
                 <div class="addbook-section">
                     <div class="title">
                         <h2>Add Book</h2>
-                        <button type="button" class="addbutton" name="addbook-button" <?php if (isset($_POST['addbook-button'])) {
+                        <button type="submit" class="addbutton" name="addbook-button" <?php if (isset($_POST['addbook-button'])) {
                                                                                             //include('../pages/HSaddbook.php');
                                                                                             header("location:../pages/HSaddbook.php");
                                                                                         } ?>><span class="addtext">Add</span>

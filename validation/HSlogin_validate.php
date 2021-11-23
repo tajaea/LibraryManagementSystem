@@ -12,18 +12,17 @@ if (isset($_POST['login'])) {
     }
     $query = "SELECT * FROM librarian WHERE email='$email'";
     $result = mysqli_query($conn, $query);
-
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        if ($row['type'] == "Librarian") {
-            header("location:../pages/HSlibrarian.php");
-        } else if ($row['type'] == "Administrator") {
-            header("location:../pages/HSadministrator.php");
-        } else if ($row['type'] == "Patron") {
-            header("location:../pages/HSpatron.php");
-        }
+    $row = mysqli_fetch_assoc($result);
+    if ($result->num_rows > 0 && password_verify($password,$row['password'])) {
+            if ($row['type'] == "Librarian") {
+                header("location:../pages/HSlibrarian.php");
+            } else if ($row['type'] == "Administrator") {
+                header("location:../pages/HSadministrator.php");
+            } else if ($row['type'] == "Patron") {
+                header("location:../pages/HSpatron.php");
+            } 
     } else {
         $_SESSION['login_error'] = "* Email or Password Is Incorrect.";
         header("location:../pages/HSlogin.php");
-    }
+        }
 }
