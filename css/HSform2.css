@@ -53,7 +53,7 @@ header ul li a {
 div.container {
   width: 100%;
   display: flex;
-  position: relative;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
 }
