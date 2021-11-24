@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    $_SESSION['email']=$_POST['email'];
     if (isset($_POST['remember'])) {
         setcookie('email', $email, time() + (60 * 60 * 7));
         setcookie('password', $password, time() + (60 * 60 * 7));
