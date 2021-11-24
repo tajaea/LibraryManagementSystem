@@ -23,7 +23,11 @@ session_start();
                     $_SESSION['call_number'] = $_POST['call_number'];
                     $_SESSION['subject_area'] = $_POST['subject_area'];
                     $_SESSION['num_of_copies'] = $_POST['num_of_copies'];
-                    //header("location:../pages/HSresult.php");
+                    //$file=$_SESSION['file'];
+                    //print_r($file) ;
+                   // echo $_SESSION['file_name'];
+                   // echo $_SESSION['file_dest'];
+                    header("location:../validation/HSSync_DB.php");
                     
                 }               
             }
