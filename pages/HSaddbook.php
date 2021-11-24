@@ -43,6 +43,8 @@ session_start();
                     <input name="author" id="author" type="text" placeholder="Robert Kiyosaki">
                     <label>Year: <span>*</span></label>
                     <input name="year" id="year" type="text" placeholder="1997">
+                    <input name="reset" id="reset" type="reset" value="Reset" />
+                    <input name="next" id="next" type="submit" value="Next" />
                 </form>
             </div>
             <div class="imagebox">

@@ -41,11 +41,9 @@ session_start();
                     <label>Subject Area: <span>*</span></label>
                     <input name="subject_area" id="subject_area" type="text" placeholder="Music">
                     <label>Number of Copies: <span>*</span></label>
+                    <input name="num_of_copies" id="num_of_copies" type="text" placeholder="3" min="1" max="9000">
                     <label>Book-Cover: <span>*</span></label>
                     <input name="file" id="file" type="file">
-                    <input name="reset" id="reset" type="reset" value="Reset" />
-                    <input name="next" id="next" type="submit" value="Next" />
-                    <input name="num_of_copies" id="num_of_copies" type="text" placeholder="3" min="1" max="9000">
                     <input name="reset" id="reset" type="reset" value="Reset" />
                     <input name="next" id="next" type="submit" value="Next" />
                     <input name="back" id="back" type="button" value="Back" onclick="history.back()" />
