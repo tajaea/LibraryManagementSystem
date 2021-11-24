@@ -91,9 +91,9 @@
                     <span id="error">
                         <?php
                         
-                        if (!empty($_SESSION['registration_error'])) {
-                            echo $_SESSION['registration_error'];
-                            unset($_SESSION['registration_error']);
+                        if (!empty($_SESSION['edit_error'])) {
+                            echo $_SESSION['edit_error'];
+                            unset($_SESSION['edit_error']);
                         }
                         ?>
                     </span>
@@ -108,16 +108,16 @@
                             
                         ?>
                         <div class="input-group">
-                            <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name']?>" />
+                            <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name']?>" required />
                         </div>
                         <div class="input-group">
-                            <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row['email']?>" />
+                            <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row['email']?>" required/>
                         </div>
                         <div class="input-group">
-                            <input name="password" id="password" type="password" placeholder="Password" />
+                            <input name="password" id="password" type="password" placeholder="Password" minlenght="8" />
                         </div>
                         <div class="input-group">
-                            <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" />
+                            <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" minlenght="8" />
                         </div>
                         <div class="input-group">
                             <button name="edit" id="edit" type="Submit" class="btn">Edit</button>
