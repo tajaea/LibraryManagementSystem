@@ -51,7 +51,7 @@
     align-items: center;
   }
   .side-menu li:hover {
-    background: white;
+    background: #0e3453;
     color: #f05462;
   }
   .side-menu li a {
@@ -137,6 +137,7 @@
   }
   .container .content {
     min-height: 60vh;
+    background: url('../images/DashboardBackground.jpg');
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -191,8 +192,8 @@
    .register-section .register-form label {
     position: relative;
     bottom: 8.5px;
-    color: #f5bc09;
-    font-weight: bold;
+    color: rgb(94, 89, 89);
+    font-weight:bold;
   }
 .register-section .register-form select {
     position: relative;

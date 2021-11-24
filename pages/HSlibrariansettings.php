@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/HSlibsettings.css" />
+    <link rel="stylesheet" href="../css/HSlibsettings.css" type="text/css"/>
     <title>Librarian Settings</title>
 </head>
 
@@ -22,9 +22,9 @@
                 <h1>Librarian</h1>
             </div>
             <ul>
-                <li><a href="../pages/HSlibrarian.php"><img src="../images/dashboard.png" alt=""> Dashboard</a></li>
-                <li><img src="../images/search.png" alt=""> Search Library Card</li>
-                <li class="settings-button"><img src="../images/search.png" alt=""> Settings</li>
+                <li><a href="../pages/HSlibrarian.php"><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</a></li>
+                <li><img src="../images/search.png" alt="">&nbsp; Search Library Card</li>
+                <li class="settings-button"><img src="../images/system-update.png" alt="">&nbsp;Settings</li>
             </ul>
         </div>
         <div class="container">
