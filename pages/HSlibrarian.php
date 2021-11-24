@@ -20,6 +20,14 @@
                 <li><img src="../images/search.png" alt=""> Search Library Card</li>
                 <li><a href="../pages/HSsettings.php"><img src="../images/search.png" alt="">&nbsp; Settings</a></li>
             </ul>
+            <button type="submit" class="btn" name="logout-button" <?php if (isset($_POST['logout-button'])) {
+                                                                        header("location:../pages/HSlogout.php");
+                                                                    } ?>>
+                <span class="logout-text">Exit</span>
+                <span class="logout-icon">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+            </button>
         </div>
         <div class="container">
             <div class="header">
@@ -30,7 +38,6 @@
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                     </div>
                     <div class="user">
-                        <a href="../pages/HSlogout.php" class="btn">Log-Out</a>
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
                         </div>
@@ -46,7 +53,6 @@
                         <img src="../images/book.png" alt="">
                     </div>
                     <button type="submit" class="addbutton" name="addbook-button" <?php if (isset($_POST['addbook-button'])) {
-                                                                                        //include('../pages/HSaddbook.php');
                                                                                         header("location:../pages/HSaddbook.php");
                                                                                     } ?>>
                         <span class="addtext">Add</span>
@@ -63,7 +69,6 @@
                         <img src="../images/info.png" alt="">
                     </div>
                     <button type="submit" class="detailsbutton" name="details-button" <?php if (isset($_POST['details-button'])) {
-                                                                                            //include('../pages/HSaddbook.php');
                                                                                             header("location:../pages/HSresult.php");
                                                                                         } ?>>
                         <span class="detailstext">Details</span>

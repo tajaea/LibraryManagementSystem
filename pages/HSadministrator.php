@@ -17,10 +17,16 @@
             </div>
             <ul>
                 <li><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>
-                <!--<li><img src="../images/document.png" alt="">&nbsp; Data Entry</li>-->
                 <li><img src="../images/search.png" alt=""> Search Library Card</li>
-                <!--<li><img src="../images/system-update.png" alt="">&nbsp; Book Details</li>-->
             </ul>
+            <button type="submit" class="btn" name="logout-button" <?php if (isset($_POST['logout-button'])) {
+                                                                        header("location:../pages/HSlogout.php");
+                                                                    } ?>>
+                <span class="logout-text">Exit</span>
+                <span class="logout-icon">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+            </button>
         </div>
         <div class="container">
             <div class="header">
@@ -31,7 +37,6 @@
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                     </div>
                     <div class="user">
-                        <a href="../pages/HSlogout.php" class="btn">Log-Out</a>
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
                         </div>
