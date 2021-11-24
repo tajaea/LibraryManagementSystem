@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/HSlibdashboard.css" />
+    <link rel="stylesheet" href="../css/HSlibdashboard.css" type="text/css" />
     <title>Librarian Dashboard</title>
 </head>
 
@@ -16,9 +16,9 @@
                 <h1>Librarian</h1>
             </div>
             <ul>
-                <li><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>
-                <li><img src="../images/search.png" alt=""> Search Library Card</li>
-                <li><a href="../pages/HSlibrariansettings.php"><img src="../images/search.png" alt="">&nbsp; Settings</a></li>
+                <li class="dashboard-button"><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>
+                <li><img src="../images/search.png" alt="">&nbsp; Search Library Card</li>
+                <li><a href="../pages/HSlibrariansettings.php"><img src="../images/system-update.png" alt="">&nbsp; Settings</a></li>
             </ul>
             <button type="submit" class="btn" name="logout-button" <?php if (isset($_POST['logout-button'])) {
                                                                         header("location:../pages/HSlogout.php");

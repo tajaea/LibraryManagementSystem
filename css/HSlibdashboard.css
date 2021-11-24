@@ -39,8 +39,15 @@ h2 {
   align-items: center;
 }
 .side-menu li:hover {
-  background: white;
-  color: #f05462;
+  background: #0e3453;
+  
+}
+.side-menu li a {
+    
+  color: white;
+}
+.side-menu .dashboard-button {
+  background-color: #0e3453;
 }
 .side-menu .btn {
   background: #6082b6;
@@ -83,7 +90,7 @@ h2 {
   right: 0;
   width: 80vw;
   height: 100vh;
-  background: #e5e4e2;
+  background: url('../images/DashboardBackground.jpg');
 }
 .container .header {
   position: fixed;
