@@ -52,16 +52,13 @@
   }
   .side-menu li:hover {
     background: #0e3453;
-    color: #f05462;
+    
   }
   .side-menu li a {
     
     color: white;
   }
-  .side-menu li a:hover {
-    
-    color: #f05462;
-  }
+  
   .side-menu .settings-button {
     background-color: #0e3453;
   }
@@ -71,7 +68,7 @@
     right: 0;
     width: 80vw;
     height: 100vh;
-    background: #e5e4e2;
+    background: url('../images/DashboardBackground.jpg');
   }
   .container .header {
     position: fixed;
@@ -137,7 +134,7 @@
   }
   .container .content {
     min-height: 60vh;
-    background: url('../images/DashboardBackground.jpg');
+    
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -150,6 +147,8 @@
     flex: 2;
     background: #f0ffff;
     margin: 0 25px 25px;
+    padding-left: 10%;
+    padding-right: 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
     text-align: center;
     
@@ -218,6 +217,9 @@
     color: white;
     cursor: pointer;
     transition: 0.3s;
+    
+    
+    
   }
     .register-form .input-group .btn:hover {
     transform: translateY(-5px);
@@ -229,6 +231,8 @@
     flex: 2;
     background: #f0ffff;
     margin: 0 25px 25px;
+    padding-left: 10%;
+    padding-right: 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
     text-align: center;
   }
