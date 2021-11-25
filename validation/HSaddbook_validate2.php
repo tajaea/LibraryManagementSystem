@@ -83,10 +83,7 @@ session_start();
                     } else {
                         echo "<script>alert('Nothing Uploaded'); window.location.href = 'HSaddbook.php';</script>";
                     }
-                    //$file=$_SESSION['file'];
-                    //print_r($file) ;
-                   // echo $_SESSION['file_name'];
-                   // echo $_SESSION['file_dest'];
+                    
                     header("location:../validation/HSSync_DB.php");
                     
                 }               
