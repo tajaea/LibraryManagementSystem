@@ -9,8 +9,8 @@ require_once '../validation/HighSchoolBooks_DB.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/HSresult.css" />
-    <title>Details Dashboard</title>
+    <link rel="stylesheet" href="../css/HSguestbookdetails.css" />
+    <title>Guest Dashboard</title>
 </head>
 
 <body>
