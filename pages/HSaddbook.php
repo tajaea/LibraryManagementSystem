@@ -35,7 +35,7 @@ $logged_in_user = $_GET['name'];
                     }
                     ?>
                 </span>
-                <form action="../validation/HSaddbook_validate.php" method="POST" enctype="multipart/form-data">
+               <?php echo "<form action='../validation/HSaddbook_validate.php?name=$logged_in_user' method='POST' enctype='multipart/form-data'>"; ?>
                     <label>Title: <span>*</span></label>
                     <input name="title" id="title" type="text" placeholder="Rich Dad Poor Dad">
                     <label>Author: <span>*</span></label>

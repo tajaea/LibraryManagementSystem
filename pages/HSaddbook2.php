@@ -34,7 +34,7 @@ $logged_in_user = $_GET['name'];
                     }
                     ?>
                 </span>
-                <form action="../validation/HSaddbook_validate2.php" method="POST" enctype="multipart/form-data">
+                <?php echo "<form action='../validation/HSaddbook_validate2.php?name=$logged_in_user' method='POST' enctype='multipart/form-data'>"; ?>
                     <label>ISBN: <span>*</span></label>
                     <input name="isbn" id="isbn" type="text" placeholder="978-3-16-148410-0">
                     <label>Call Number: <span>*</span></label>
