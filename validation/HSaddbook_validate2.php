@@ -64,12 +64,8 @@ session_start();
                                         if(move_uploaded_file($fileloc,$filedes))
                                         {
                                           echo "<script>alert('file upload successfull!!!!!!!!!!!');</script>";
-        
-                                            //$_SESSION['file'] = $filedes;
-                                            //header('location:HSaddbook2.php');
                                         }else{
                                             echo "<script>alert('file upload failed validate');</script>";
-        
                                         }
                                 } else {
                                     echo "<script>alert('File size limit exceeded'); window.location.href = 'HSaddbook.php';</script>";
