@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $logged_in_user=$_GET['name'];
     require 'HighSchoolBooks_DB.php';
     if(isset($_POST['edit'])){
         if($_POST['password']==$_POST['cpassword']){
@@ -13,25 +14,25 @@
                     $password = password_hash($_POST['password'], MHASH_MD5);
                     $query = "UPDATE librarian set password='$password' where email='$email'";
                     if(mysqli_query($conn, $query)){
-                        header('location:../pages/HSlibrariansettings.php');
+                        header("location:../pages/HSlibrariansettings.php?name=$name");
                     }else{
                         
                         $_SESSION['edit_error']='Password Failed to Update';
-                        header('location:../pages/HSlibrariansettings.php');
+                        header("location:../pages/HSlibrariansettings.php?name=$name");
                     }
                 }else{
-                    header('location:../pages/HSlibrariansettings.php');
+                    header("location:../pages/HSlibrariansettings.php?name=$name");
                 }
             }else{
                 
                 $_SESSION['edit_error']='Name and/or Email Failed to Update';
-                header('location:../pages/HSlibrariansettings.php');
+                header("location:../pages/HSlibrariansettings.php?name=$name");
             }
             
         }else{
             
             $_SESSION['edit_error']='Password mismatch';
-            header('location:../pages/HSlibrariansettings.php');
+            header("location:../pages/HSlibrariansettings.php?name=$name");
         }
         
     }else{

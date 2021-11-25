@@ -1,3 +1,7 @@
+<?php
+session_start();
+$logged_in_user=$_GET['name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,8 @@
             <ul>
                 <li class="dashboard-button"><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>
                 <li><img src="../images/search.png" alt="">&nbsp; Search Library Card</li>
-                <li><a href="../pages/HSlibrariansettings.php"><img src="../images/system-update.png" alt="">&nbsp; Settings</a></li>
+                <?php echo "<li><a href='../pages/HSlibrariansettings.php?name=$logged_in_user'><img src='../images/system-update.png' alt=''>&nbsp; Settings</a></li>"; ?>
+                <!--<li><a href="../pages/HSlibrariansettings.php?name=$logged_in_user"><img src="../images/system-update.png" alt="">&nbsp; Settings</a></li>-->
             </ul>
             <button type="submit" class="btn" name="logout-button" <?php if (isset($_POST['logout-button'])) {
                                                                         header("location:../pages/HSlogout.php");
@@ -38,7 +43,9 @@
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                     </div>-->
                     <div class="user">
-                        <p>Welcome, Mr. Anglin</p>
+                        <?php 
+                            echo "<p>Welcome ".$logged_in_user."</p>"; 
+                        ?>
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
                         </div>
@@ -54,7 +61,7 @@
                         <img src="../images/book.png" alt="">
                     </div>
                     <button type="submit" class="addbutton" name="addbook-button" <?php if (isset($_POST['addbook-button'])) {
-                                                                                        header("location:../pages/HSaddbook.php");
+                                                                                        header("location:../pages/HSaddbook.php?name=$logged_in_user");
                                                                                     } ?>>
                         <span class="addtext">Add</span>
                         <span class="addicon">
@@ -70,7 +77,7 @@
                         <img src="../images/info.png" alt="">
                     </div>
                     <button type="submit" class="detailsbutton" name="details-button" <?php if (isset($_POST['details-button'])) {
-                                                                                            header("location:../pages/HSresult.php");
+                                                                                            header("location:../pages/HSresult.php?name=$logged_in_user");
                                                                                         } ?>>
                         <span class="detailstext">Details</span>
                         <span class="detailsicon">

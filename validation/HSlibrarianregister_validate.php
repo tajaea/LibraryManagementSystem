@@ -1,5 +1,6 @@
 <?php
 require 'HighSchoolBooks_DB.php';
+$logged_in_user=$_GET['name'];
 session_start();
 
 if (isset($_POST['register'])) {
@@ -11,7 +12,7 @@ if (isset($_POST['register'])) {
         || empty($_POST['cpassword'])
     ) {
         $_SESSION['registration_error'] = "* fields cannot be left empty.";
-        header("location:../pages/HSlibrariansettings.php");
+        header("location:../pages/HSlibrariansettings.php?name=$logged_in_user");
     } else {
         $_POST['email'] = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -22,15 +23,15 @@ if (isset($_POST['register'])) {
                 $password = password_hash($_POST['password'], MHASH_MD5);
             } else {
                 $_SESSION['registration_error'] = "Password Does Not Match.";
-                header("location:../pages/HSlibrariansettings.php");
+                header("location:../pages/HSlibrariansettings.php?name=$logged_in_user");
             }
         } else {
             $_SESSION['registration_error'] = "Invalid Email.";
-            header("location:../pages/HSlibrariansettings.php");
+            header("location:../pages/HSlibrariansettings.php?name=$logged_in_user");
         }
         $query = "INSERT INTO librarian (name, email, password, type) VALUES ('$name', '$email', '$password', '$type')";
         if (mysqli_query($conn, $query)) {
-            header("location:../pages/HSlibrariansettings.php");
+            header("location:../pages/HSlibrariansettings.php?name=$logged_in_user");
         } else {
             echo "<script>alert('Error1');</script>";
         }
@@ -38,6 +39,6 @@ if (isset($_POST['register'])) {
     }
 } else {
     echo "<script>alert('Error2');</script>";
-    header("location:../pages/HSlibrariansettings.php");
+    header("location:../pages/HSlibrariansettings.php?name=$logged_in_user");
 }
 ?>

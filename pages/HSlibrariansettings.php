@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../validation/HighSchoolBooks_DB.php';
+$logged_in_user=$_GET['name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,8 @@ require '../validation/HighSchoolBooks_DB.php';
             <h1>Librarian</h1>
         </div>
         <ul>
-            <li><a href="../pages/HSlibrarian.php"><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</a></li>
+            <?php echo "<li><a href='../pages/HSlibrarian.php?name=$logged_in_user'><img src='../images/dashboard.png' alt=''>&nbsp; Dashboard</a></li>"; ?>
+            <!--<li><a href="../pages/HSlibrarian.php"><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</a></li>-->
             <li><img src="../images/search.png" alt="">&nbsp; Search Library Card</li>
             <li class="settings-button"><img src="../images/system-update.png" alt="">&nbsp;Settings</li>
         </ul>
@@ -34,7 +36,9 @@ require '../validation/HighSchoolBooks_DB.php';
                     <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                 </div>-->
                 <div class="user">
-                    <p>Welcome, Mr. Anglin</p>
+                    <?php 
+                            echo "<p>Welcome ".$logged_in_user."</p>"; 
+                    ?>
                     <div class="user-image">
                         <img src="../images/programmer.png" alt="">
                     </div>
@@ -55,7 +59,7 @@ require '../validation/HighSchoolBooks_DB.php';
                     }
                     ?>
                 </span>
-                <form action="../validation/HSlibrarianregister_validate.php" method="POST" class="register-form">
+                <?php echo"<form action='../validation/HSlibrarianregister_validate.php?name=$logged_in_user' method='POST' class='register-form'>";?>
 
                     <div class="input-group">
                         <input name="name" id="name" type="text" placeholder="Name" />
