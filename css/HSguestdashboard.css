@@ -191,6 +191,7 @@ h2 {
 .content .available .books td:hover img {
   box-shadow: 0px 20px 20px -10px #192824;
   transition: 0.3s ease-out;
+  
 }
 
 .overlay {
