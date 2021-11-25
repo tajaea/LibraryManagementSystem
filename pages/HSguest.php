@@ -17,7 +17,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/HSguestdashboard.css" type="text/css" />
+    <script  defer type="text/javascript" src="../validation/scripts.js" ></script>
     <title>Guest Dashboard</title>
+
+    
 </head>
 
 <body>
@@ -72,6 +75,9 @@
                                             echo "<td>";
                                                 //echo $row['quantity'];
                                                 echo "<img src = '../files/".$row['bookcover']."' alt = '".$row['title']."' >";
+                                                echo "<div class='overlay'>";
+                                                    echo "<div class='title' id='title'>".$row['title']."</div>";
+                                                echo "</div>";
                                                 echo "<label>Quantity:</label>".$row['quantity'];
                                             echo "</td>";
                                         $x=$x+1;

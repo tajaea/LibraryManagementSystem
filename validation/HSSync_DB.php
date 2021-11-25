@@ -21,7 +21,7 @@ $query = "INSERT INTO book (isbn, title, author, year, bookcover, callno, subjec
           VALUES ('$isbn', '$title', '$author', '$year', '$image', '$callno', '$subject', '$copies')";
         if (mysqli_query($conn, $query)) {
             echo "<script>alert('File successfully uploaded');</script>";
-
+            header("location:../pages/HSlibrarian.php");
            /* if (move_uploaded_file($olddest, $new_loc)) {
                 echo "<script>alert('File successfully uploaded');</script>";
                 header("location:../pages/HSlibrarian.php");
