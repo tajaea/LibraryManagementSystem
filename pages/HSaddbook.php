@@ -1,7 +1,6 @@
 <?php
 session_start();
-//testing
-//testing part 2
+$logged_in_user = $_GET['name'];
 ?>
 
 <!DOCTYPE html>

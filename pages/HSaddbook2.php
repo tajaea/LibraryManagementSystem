@@ -1,5 +1,6 @@
 <?php
 session_start();
+$logged_in_user = $_GET['name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
