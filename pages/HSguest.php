@@ -65,9 +65,9 @@ $result = mysqli_query($conn, $query);
                                     //$row = mysqli_fetch_assoc($result);
                                     while (($x < 3) && ($row = mysqli_fetch_assoc($result))) {
 
-
+                                        $name=$row['title'];
                                         echo "<td>";
-                                        echo "<a href = '../pages/HSguestbookdetails.php'><img src = '../files/" . $row['bookcover'] . "' alt = '" . $row['title'] . "' ></a>";
+                                        echo "<a href = '../pages/HSguestbookdetails.php?name=$name'><img src = '../files/" . $row['bookcover'] . "' alt = '" . $row['title'] . "' ></a>";
                                         echo "<div class='overlay'>";
                                         echo "<div class='title' id='title'>" . $row['title'] . "</div>";
                                         echo "</div>";

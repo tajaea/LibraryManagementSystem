@@ -64,7 +64,8 @@ require_once '../validation/HighSchoolBooks_DB.php';
                     <tbody>
 
                         <?php
-                        $query = "SELECT * FROM book";
+                        $name=$_GET['name'];
+                        $query = "SELECT * FROM book WHERE title= '$name'";
                         $result = mysqli_query($conn, $query);
                         if ($result->num_rows > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
