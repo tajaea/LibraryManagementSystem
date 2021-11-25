@@ -14,12 +14,13 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     if ($result->num_rows > 0 && password_verify($password,$row['password'])) {
+            $logged_in_user=$row['name'];
             if ($row['type'] == "Librarian") {
-                header("location:../pages/HSlibrarian.php");
+                header("location:../pages/HSlibrarian.php?name=$logged_in_user");
             } else if ($row['type'] == "Administrator") {
-                header("location:../pages/HSadministrator.php");
+                header("location:../pages/HSadministrator.php?name=$logged_in_user");
             } else if ($row['type'] == "Patron") {
-                header("location:../pages/HSpatron.php");
+                header("location:../pages/HSpatron.php?name=$logged_in_user");
             } 
     } else {
         $_SESSION['login_error'] = "* Email or Password Is Incorrect.";
