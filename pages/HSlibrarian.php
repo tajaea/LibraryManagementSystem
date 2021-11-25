@@ -33,10 +33,10 @@
             <div class="header">
                 <img src="../images/logo.png" class="logo">
                 <div class="nav">
-                    <div class="search">
+                    <!--<div class="search">
                         <input type="text" placeholder="Search">
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
-                    </div>
+                    </div>-->
                     <div class="user">
                         <p>Welcome, Mr. Anglin</p>
                         <div class="user-image">
