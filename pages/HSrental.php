@@ -1,3 +1,7 @@
+<?php
+$logged_in_user=$_GET['name'];
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,20 +19,20 @@
         <header>
             <img src="../images/logo.png" class="logo">
             <ul>
-                <li><a href="../pages/HSlibrarian.php">Back</a></li>
+               <?php echo "<li><a href='../pages/HSlibrarian.php?name=$logged_in_user'>Back</a></li>";?>
             </ul>
         </header>
         <div class="content">
             <div class="login-container">
                 <span id="error">
                     <?php
-                    if (!empty($_SESSION['login_error'])) {
-                        echo $_SESSION['login_error'];
-                        unset($_SESSION['login_error']);
+                    if (!empty($_SESSION['rental_error'])) {
+                        echo $_SESSION['rental_error'];
+                        unset($_SESSION['rental_error']);
                     }
                     ?>
                 </span>
-                <form action="../validation/HSrental_validate.php" method="POST" class="login-form">
+        <?php echo"<form action='../validation/HSrental_validate.php?name=$logged_in_user' method='POST' class='login-form'> ";?>
                     <h2>Search Patron</h2>
                     <div class="input-group">
                         <input name="name" id="name" type="text" placeholder="Patron Name" />
