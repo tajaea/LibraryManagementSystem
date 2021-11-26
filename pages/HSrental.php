@@ -28,7 +28,7 @@
                     }
                     ?>
                 </span>
-                <form action="HSrental_validate.php" method="POST" class="login-form">
+                <form action="../validation/HSrental_validate.php" method="POST" class="login-form">
                     <h2>Search Patron</h2>
                     <div class="input-group">
                         <input name="name" id="name" type="text" placeholder="Patron Name" />
