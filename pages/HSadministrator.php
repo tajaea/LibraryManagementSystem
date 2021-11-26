@@ -165,7 +165,7 @@ $result = mysqli_query($conn, $query);
             </div>
             <div class="details-section">
                 <div class="title">
-                    <h2>Delete Account</h2>
+                    <h2>Delete</h2>
                 </div>
                 <span id="error">
                     <?php
