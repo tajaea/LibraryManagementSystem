@@ -42,6 +42,40 @@ h2 {
   background: white;
   color: #f05462;
 }
+.side-menu.subnav {
+  float: left;
+  overflow: hidden;
+}
+.side-menu .subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.side-menu .subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+.side-menu .subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+.side-menu .subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+.side-menu .subnav:hover .subnav-content {
+  display: block;
+}
 .side-menu .btn {
   background: #6082b6;
   color: white;
@@ -106,29 +140,6 @@ h2 {
   display: flex;
   align-items: center;
 }
-.container .header .nav .search {
-  flex: 3;
-  display: flex;
-  justify-content: center;
-}
-.container .header .nav .search[type="text"] {
-  border: none;
-  background: #f1f1f1;
-  padding: 10px;
-  width: 50%;
-}
-.container .header .nav .search .searchbutton {
-  width: 40px;
-  height: 40px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.container .header .nav .search .searchbutton img {
-  width: 30px;
-  height: 30px;
-}
 .container .header .nav .user {
   flex: 1;
   display: flex;
@@ -156,134 +167,4 @@ h2 {
   flex-wrap: wrap;
   position: relative;
   top: 150px;
-}
-.container .content .addbook-section {
-  min-height: 50vh;
-  flex: 2;
-  background: #f0ffff;
-  margin: 0 25px 25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
-}
-.container .content .addbook-section .title {
-  position: relative;
-  left: 42%;
-  top: 35px;
-}
-.container .content .addbook-section .title h2 {
-  font-family: sans-serif;
-  font-size: 25px;
-  font-weight: 400px;
-}
-.container .content .addbook-section .addbook-image {
-  height: 25%;
-  width: 49%;
-  position: fixed;
-  left: 34%;
-  top: 270px;
-}
-.container .content .addbook-section .addbook-image img {
-  height: 220px;
-  width: 220px;
-}
-.container .content .addbook-section .addbutton {
-  display: inline-flex;
-  height: 70px;
-  width: 250px;
-  position: fixed;
-  left: 33%;
-  margin-top: 18%;
-  padding: 0;
-  background: #009578;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  overflow: hidden;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.container .content .addbook-section .addbutton:active {
-  background: #006e58;
-}
-.container .content .addbook-section .addbutton:hover {
-  background: #008168;
-}
-.container .content .addbook-section .addbutton .addtext,
-.container .content .addbook-section .addbutton .addicon {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 24px;
-  color: white;
-  height: 100%;
-  width: 100%;
-}
-.container .content .addbook-section .addbutton .addicon {
-  font-size: 1.5em;
-  background: rgba(0, 0, 0, 0.08);
-}
-.container .content .details-section {
-  min-height: 50vh;
-  flex: 2;
-  background: #f0ffff;
-  margin: 0 25px 25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
-}
-.container .content .details-section .title {
-  position: relative;
-  left: 42%;
-  top: 35px;
-}
-.container .content .details-section .title h2 {
-  font-family: sans-serif;
-  font-size: 25px;
-  font-weight: 400px;
-}
-.container .content .details-section .details-image {
-  height: 25%;
-  width: 49%;
-  position: fixed;
-  left: 76%;
-  top: 270px;
-}
-.container .content .details-section .details-image img {
-  height: 220px;
-  width: 220px;
-}
-.container .content .details-section .detailsbutton {
-  display: inline-flex;
-  height: 70px;
-  width: 250px;
-  position: fixed;
-  left: 75%;
-  margin-top: 18%;
-  padding: 0;
-  background: #009578;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  overflow: hidden;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.container .content .details-section .detailsbutton:active {
-  background: #006e58;
-}
-.container .content .details-section .detailsbutton:hover {
-  background: #008168;
-}
-.container .content .details-section .detailsbutton .detailstext,
-.container .content .details-section .detailsbutton .detailsicon {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 24px;
-  color: white;
-  height: 100%;
-  width: 100%;
-}
-.container .content .details-section .detailsbutton .detailsicon {
-  font-size: 1.5em;
-  background: rgba(0, 0, 0, 0.08);
 }

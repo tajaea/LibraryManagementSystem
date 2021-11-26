@@ -13,7 +13,7 @@
     <form action="" method="POST">
         <div class="side-menu">
             <div class="brand-name">
-                <h1>Administrator</h1>
+                <h1>Delete Account</h1>
             </div>
             <ul>
                 <li><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>

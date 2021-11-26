@@ -1,7 +1,7 @@
 <?php
 session_start();
 require '../validation/HighSchoolBooks_DB.php';
-$logged_in_user=$_GET['name'];
+$logged_in_user = $_GET['name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,8 +36,8 @@ $logged_in_user=$_GET['name'];
                     <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                 </div>-->
                 <div class="user">
-                    <?php 
-                            echo "<p>Welcome ".$logged_in_user."</p>"; 
+                    <?php
+                    echo "<p>Welcome " . $logged_in_user . "</p>";
                     ?>
                     <div class="user-image">
                         <img src="../images/programmer.png" alt="">
@@ -59,30 +59,30 @@ $logged_in_user=$_GET['name'];
                     }
                     ?>
                 </span>
-                <?php echo"<form action='../validation/HSlibrarianregister_validate.php?name=$logged_in_user' method='POST' class='register-form'>";?>
+                <?php echo "<form action='../validation/HSlibrarianregister_validate.php?name=$logged_in_user' method='POST' class='register-form'>"; ?>
 
-                    <div class="input-group">
-                        <input name="name" id="name" type="text" placeholder="Name" />
-                    </div>
-                    <div class="input-group">
-                        <input name="email" id="email" type="text" placeholder="Email" />
-                    </div>
-                    <label>Account Type</label>
-                    <select name="atype" id="atype">
-                        <option value="">Choose One</option>
-                        <option value="Librarian">Libarian</option>
-                        <option value="Patron">Patrons</option>
-                        <option value="Administrator">Administrator</option>
-                    </select>
-                    <div class="input-group">
-                        <input name="password" id="password" type="password" placeholder="Password" />
-                    </div>
-                    <div class="input-group">
-                        <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" />
-                    </div>
-                    <div class="input-group">
-                        <button name="register" id="register" type="Submit" class="btn">Register</button>
-                    </div>
+                <div class="input-group">
+                    <input name="name" id="name" type="text" placeholder="Name" />
+                </div>
+                <div class="input-group">
+                    <input name="email" id="email" type="text" placeholder="Email" />
+                </div>
+                <label>Account Type</label>
+                <select name="atype" id="atype">
+                    <option value="">Choose One</option>
+                    <option value="Librarian">Libarian</option>
+                    <option value="Patron">Patrons</option>
+                    <option value="Administrator">Administrator</option>
+                </select>
+                <div class="input-group">
+                    <input name="password" id="password" type="password" placeholder="Password" />
+                </div>
+                <div class="input-group">
+                    <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" />
+                </div>
+                <div class="input-group">
+                    <button name="register" id="register" type="Submit" class="btn">Register</button>
+                </div>
 
                 </form>
             </div>
