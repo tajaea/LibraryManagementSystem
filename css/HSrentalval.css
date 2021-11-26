@@ -89,6 +89,8 @@
     width: 80vw;
     height: 100vh;
     background: url("../images/DashboardBackground.jpg");
+    overflow: hidden;
+    overflow-y: scroll;
   }
   .container .header {
     position: fixed;
@@ -150,6 +152,7 @@
     flex-wrap: wrap;
     position: relative;
     top: 150px;
+    
   }
   .content .available {
     background: rgb(255, 255, 255);
@@ -159,6 +162,8 @@
     border-radius: 5px;
     text-align: center;
     padding: 3%;
+    overflow: hidden;
+    overflow-y: scroll;
   }
   .content .available  {
     text-align: center;
@@ -279,4 +284,20 @@
     background-color: #f69d165d;
     border-radius: 10px;
   }
+  .content .available::-webkit-scrollbar {
+    width: 0.7vw;
+  }
   
+  .content .available::-webkit-scrollbar-thumb {
+    background-color: #e9a744;
+    border-radius: 10px;
+  }
+  .content .available::-webkit-scrollbar-thumb:hover {
+    background-color: #b8730ca1;
+    border-radius: 10px;
+  }
+  
+  .content .available::-webkit-scrollbar-track {
+    background-color: #f69d165d;
+    border-radius: 10px;
+  }
