@@ -126,8 +126,8 @@ h2 {
 .container .header .nav .welcome p {
   font-size: 25px;
   font-weight: bold;
-  position: fixed;
-  text-align: center;
+  position: relative;
+  left: 10%;
 }
 .container .header .nav .user .user-image {
   position: fixed;
