@@ -40,7 +40,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                     </div>-->
                     <div class="user">
-                        <p>Welcome, Mr. Anglin</p>
+                        <p>Welcome, Guest</p>
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
                         </div>
@@ -64,7 +64,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
                     <tbody>
 
                         <?php
-                        $name=$_GET['name'];
+                        $name = $_GET['name'];
                         $query = "SELECT * FROM book WHERE title= '$name'";
                         $result = mysqli_query($conn, $query);
                         if ($result->num_rows > 0) {

@@ -61,16 +61,14 @@ $result = mysqli_query($conn, $query);
                                 for ($y = 0; $y < $result->num_rows; $y = $y + 3) {
                                     $x = 0;
                                     echo "<tr>";
-                                    //$row = mysqli_fetch_assoc($result);
                                     while (($x < 3) && ($row = mysqli_fetch_assoc($result))) {
-
-                                        $name=$row['title'];
+                                        $name = $row['title'];
                                         echo "<td>";
                                         echo "<a href = '../pages/HSguestbookdetails.php?name=$name'><img src = '../files/" . $row['bookcover'] . "' alt = '" . $row['title'] . "' ></a>";
                                         echo "<div class='overlay'>";
                                         echo "<div class='title' id='title'>" . $row['title'] . "</div>";
                                         echo "</div>";
-                                        echo "<label>Quantity:</label>" . $row['quantity'];
+                                        echo "<label>Quantity: </label>" . $row['quantity'];
                                         echo "</td>";
                                         $x = $x + 1;
                                     }
