@@ -19,7 +19,7 @@ h2 {
 }
 .side-menu {
   position: fixed;
-  background: #4682b4;
+  background: #2b6777;
   width: 20vw;
   min-height: 100vh;
   display: flex;
@@ -39,13 +39,13 @@ h2 {
   align-items: center;
 }
 .side-menu li:hover {
-  background: #0e3453;
+  background: #ffa218c4;
 }
 .side-menu li a {
   color: white;
 }
 .side-menu .dashboard-button {
-  background-color: #0e3453;
+  background-color: #dd8a0da4;
 }
 .side-menu .btn {
   background: #6082b6;

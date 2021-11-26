@@ -22,7 +22,7 @@ $logged_in_user = $_GET['name'];
             <ul>
                 <li class="dashboard-button"><img src="../images/dashboard.png" alt="">&nbsp; Dashboard</li>
                 <li><img src="../images/search.png" alt="">&nbsp; Search Library Card</li>
-                <?php echo "<li><a href='../pages/HSrental.php?name=$logged_in_user'><img src='../images/system-update.png' alt=''>&nbsp; Rental</a></li>"; ?>
+                <?php echo "<li><a href='../pages/HSrental.php?name=$logged_in_user'><img src='../images/shopping-cart.png' alt=''>&nbsp; Rental</a></li>"; ?>
                 <?php echo "<li><a href='../pages/HSlibrariansettings.php?name=$logged_in_user'><img src='../images/system-update.png' alt=''>&nbsp; Settings</a></li>"; ?>
                 <!--<li><a href="../pages/HSlibrariansettings.php?name=$logged_in_user"><img src="../images/system-update.png" alt="">&nbsp; Settings</a></li>-->
             </ul>
