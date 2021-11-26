@@ -2,8 +2,7 @@
 
 session_start();
 require_once '../validation/HighSchoolBooks_DB.php';
-//$query = "SELECT * FROM librarian";
-//$result = mysqli_query($conn, $query);
+$logged_in_user=$_GET['name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,15 +77,16 @@ require_once '../validation/HighSchoolBooks_DB.php';
 
                             function display($query, $conn)
                             {
+                                $logged_in_user=$GLOBALS['logged_in_user'];
                                 $result = mysqli_query($conn, $query);
                                 if ($result->num_rows > 0) {
                                     for ($y = 0; $y < $result->num_rows; $y = $y + 3) {
                                         $x = 0;
                                         echo "<tr>";
                                         while (($x < 3) && ($row = mysqli_fetch_assoc($result))) {
-                                            //$name = $row['name'];
+                                            
                                             echo "<td>";
-                                            echo "<a href = '../pages/HSguestbookdetails.php'><img src = '../images/user_icon.png ' alt = '" . $row['name'] . "' ></a>";
+                                            echo "<img src = '../images/user_icon.png ' alt = '" . $row['name'] . "' >";
                                             echo "<p>Name: " . $row['name'] . "</p>";
                                             echo "<p>Email: " . $row['email'] . "</p>";
                                             echo "</td>";
@@ -95,35 +95,22 @@ require_once '../validation/HighSchoolBooks_DB.php';
                                         echo "</tr>";
                                     }
                                 } else {
-                                    echo "<script>alert('0 results')</script>";
+                                    $_SESSION['rental_error'] = "0 results for this search";
+                                    header("location:../pages/HSrental.php?name=$logged_in_user");
                                 }
                             }
 
                             if (isset($_POST['login'])) {
-                                //if (isset($_POST['search'])) {
-                                    echo "<script>alert('POSTED: '". $_POST['name']."');</script>";
-                                    //echo "<script>alert('POSTED: '". $_POST['name']."');</script>";
+                                
                                     if (!empty($_POST['name'])) {
 
-                                        $query = "SELECT * FROM librarian where name like '" . stringSplit($_POST['name']) . "'";
+                                        $query = "SELECT * FROM librarian where name like '" . stringSplit($_POST['name']) . "' AND type='Patron'";
                                         display($query, $conn);
                                     } else{
-                                        echo "<script>alert('Something went wrong');</script>";
-                                    } /*if ($_POST['atype'] == "Year") {
-                                        $query = "SELECT * FROM book where year like '" . stringSplit($_POST['search']) . "'";
-                                        display($query, $conn);
-                                    } else if ($_POST['atype'] == "Subject") {
-                                        $query = "SELECT * FROM book where subjectarea like '" . stringSplit($_POST['search']) . "'";
-                                        display($query, $conn);
-                                    } else if ($_POST['atype'] == "Author") {
-                                        $query = "SELECT * FROM book where author like '" . stringSplit($_POST['search']) . "'";
-                                        display($query, $conn);
-                                    } else {
-                                        echo "<script>alert('You have not entered a search type')</script>";
-                                    }*/
-                                //} else {
-                                //    echo "<script>alert('You have not entered a anyhing to search')</script>";
-                                //}
+                                        $_SESSION['rental_error'] = "* field cannot be left empty.";
+                                        echo "<script>alert('Nothing was submitted');</script>";
+                                        header("location:../pages/HSrental.php?name=$logged_in_user");
+                                    } 
                             }
                             mysqli_close($conn);
                             ?>
