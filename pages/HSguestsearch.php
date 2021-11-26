@@ -53,15 +53,17 @@ $result = mysqli_query($conn, $query);
             </div>
             <div class="content">
                 <div class="available">
-                    <label>Search Type</label>
-                    <select name="atype" id="atype">
-                        <option value="">Choose One</option>
-                        <option value="Title">Title</option>
-                        <option value="Year">Year</option>
-                        <option value="Subject">Subject Area</option>
-                        <option value="Author">Author</option>
-                    </select><br><br>
-                    <input type="text" name="search" placeholder="Search"><button type="submit" name="submit" class="searchbtn"><img src="../images/search.png" alt=""></button></input>
+                    <div class="search-header">
+                        <label>Search Type</label>
+                        <select name="atype" id="atype">
+                            <option value="">Choose One</option>
+                            <option value="Title">Title</option>
+                            <option value="Year">Year</option>
+                            <option value="Subject">Subject Area</option>
+                            <option value="Author">Author</option>
+                        </select><br><br>
+                        <input type="text" id="search" name="search" placeholder="Search"><button id="image-search" type="submit" name="submit" class="searchbtn"><img src="../images/search.png" alt=""></button></input>
+                    </div>
 
                     <div class="books">
                         <table>
