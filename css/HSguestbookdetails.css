@@ -174,17 +174,20 @@ h2 {
   font-size: 0.9em;
   min-width: 400px;
   min-height: 200px;
+  max-width: 90%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 .table thead tr {
   background-color: #009879;
   color: white;
-  text-align: left;
-  font-weight: bold;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
 }
 .table th,
 .table td {
@@ -193,6 +196,9 @@ h2 {
 .table tbody tr {
   border-bottom: 1px solid #dddddd;
   background-color: #f3f3f3;
+  font-size: 20px;
+  font-weight: bold;
+  font-family:sans-serif;
 }
 /*.table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;

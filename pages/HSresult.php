@@ -51,61 +51,63 @@ $logged_in_user=$_GET['name'];
                 </div>
             </div>
             <div class="content">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Year Published</th>
-                            <th>ISBN</th>
-                            <th>Call Number</th>
-                            <th>Subject Area</th>
-                            <th>No. of Copies</th>
-                            <th>Book Cover</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Year Published</th>
+                                <th>ISBN</th>
+                                <th>Call Number</th>
+                                <th>Subject Area</th>
+                                <th>No. of Copies</th>
+                                <th>Book Cover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        <?php
-                        $query = "SELECT * FROM book";
-                        $result = mysqli_query($conn, $query);
-                        if ($result->num_rows > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            <?php
+                            $query = "SELECT * FROM book";
+                            $result = mysqli_query($conn, $query);
+                            if ($result->num_rows > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
 
-                                echo "<tr>";
-                                echo "<td>";
-                                echo $row['title'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['author'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['year'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['isbn'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['callno'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['subjectarea'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['quantity'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo "<img src = '../files/" . $row['bookcover'] . "' alt = '' >";
-                                echo "</td>";
-                                echo "</tr>";
+                                    echo "<tr>";
+                                    echo "<td>";
+                                    echo $row['title'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['author'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['year'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['isbn'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['callno'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['subjectarea'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['quantity'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo "<img src = '../files/" . $row['bookcover'] . "' alt = '' >";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<script>alert('0 results')</script>";
                             }
-                        } else {
-                            echo "<script>alert('0 results')</script>";
-                        }
-                        ?>
+                            ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </form>
