@@ -12,7 +12,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/HSguestsearch.css" type="text/css" />
+    <link rel="stylesheet" href="../css/HSrentalval.css" type="text/css" />
     <title>Guest Dashboard</title>
 </head>
 
@@ -43,8 +43,11 @@ require_once '../validation/HighSchoolBooks_DB.php';
                     <div class="welcome">
                         <p>Welcome, Guest</p>
                     </div>
+                    <div class="cart">
+                            <a href="../pages/HScart.php"><img src="../images/cart.png" alt=""></a>
+                    </div> 
                     <div class="user">
-
+                                                                  
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
                         </div>
@@ -53,7 +56,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
             </div>
             <div class="content">
                 <div class="available">
-                    <!--<label>Search Type</label>
+                    <label>Search Type</label>
                     <select name="atype" id="atype">
                         <option value="">Choose One</option>
                         <option value="Title">Title</option>
@@ -61,8 +64,8 @@ require_once '../validation/HighSchoolBooks_DB.php';
                         <option value="Subject">Subject Area</option>
                         <option value="Author">Author</option>
                     </select><br><br>
-                    <input type="text" name="search" placeholder="Search"><button type="submit" name="submit" class="searchbtn"><img src="../images/search.png" alt=""></button></input>
-                        -->
+                    <input type="text" id="search" name="search" placeholder="Search"><button type="submit" name="submit" class="searchbtn"><img src="../images/search.png" alt=""></button></input>
+                        
                     <div class="books">
                         <table>
                             <?php
@@ -84,11 +87,11 @@ require_once '../validation/HighSchoolBooks_DB.php';
                                         $x = 0;
                                         echo "<tr>";
                                         while (($x < 3) && ($row = mysqli_fetch_assoc($result))) {
-                                            //$name = $row['name'];
+                                            
+                                            $name = $row['title'];
                                             echo "<td>";
-                                            echo "<a href = '../pages/HSguestbookdetails.php'><img src = '../images/user_icon.png ' alt = '" . $row['name'] . "' ></a>";
-                                            echo "<p>Name: " . $row['name'] . "</p>";
-                                            echo "<p>Email: " . $row['email'] . "</p>";
+                                            echo "<img src = '../files/" . $row['bookcover'] . "' alt = '" . $name . "' >";
+                                            echo "<button id='addcart' onclick='".$_SESSION[$row['isbn']]=$row['isbn']."' class='addcart' name='addcart' >Add to Cart</button>" ;
                                             echo "</td>";
                                             $x = $x + 1;
                                         }
@@ -100,16 +103,20 @@ require_once '../validation/HighSchoolBooks_DB.php';
                             }
 
                             if (isset($_POST['login'])) {
-                                //if (isset($_POST['search'])) {
-                                    echo "<script>alert('POSTED: '". $_POST['name']."');</script>";
+                                echo "<script>alert('POSTED: '". $_POST['name']."');</script>";
+                                $query = "SELECT * FROM book";
+                                display($query, $conn);
+                                if (isset($_POST['search'])) {
+                                    
                                     //echo "<script>alert('POSTED: '". $_POST['name']."');</script>";
-                                    if (!empty($_POST['name'])) {
+                                   /* if (!empty($_POST['name'])) {
 
-                                        $query = "SELECT * FROM librarian where name like '" . stringSplit($_POST['name']) . "'";
+                                        $query = "SELECT * FROM librarian where name like '" . $_POST['name'] . "'";
                                         display($query, $conn);
                                     } else{
                                         echo "<script>alert('Something went wrong');</script>";
-                                    } /*if ($_POST['atype'] == "Year") {
+                                    }*/
+                                    if ($_POST['atype'] == "Year") {
                                         $query = "SELECT * FROM book where year like '" . stringSplit($_POST['search']) . "'";
                                         display($query, $conn);
                                     } else if ($_POST['atype'] == "Subject") {
@@ -120,10 +127,10 @@ require_once '../validation/HighSchoolBooks_DB.php';
                                         display($query, $conn);
                                     } else {
                                         echo "<script>alert('You have not entered a search type')</script>";
-                                    }*/
-                                //} else {
-                                //    echo "<script>alert('You have not entered a anyhing to search')</script>";
-                                //}
+                                    }
+                                } else {
+                                    //echo "<script>alert('You have not entered a anyhing to search')</script>";
+                                }
                             }
                             mysqli_close($conn);
                             ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../validation/HighSchoolBooks_DB.php';
-$logged_in_user=$_GET['name'];
+$_SESSION['loggedin']=$_GET['name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,10 @@ $logged_in_user=$_GET['name'];
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                     </div>-->
                     <div class="user">
-                        <?php 
-                            echo "<p>Welcome ".$logged_in_user."</p>"; 
+                        <?php
+                            if(isset($_SESSION['loggedin'])){ 
+                            echo "<p>Welcome ".$_SESSION['loggedin']."</p>"; 
+                            }
                         ?>
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
