@@ -2,6 +2,9 @@
 session_start();
 require '../validation/HighSchoolBooks_DB.php';
 $logged_in_user = $_GET['name'];
+
+$query = "SELECT * FROM librarian";
+$result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +43,7 @@ $logged_in_user = $_GET['name'];
             </div>
         </div>
         <div class="content">
+            
             <div class="register-section">
                 <div class="title">
                     <h2>Add Account</h2>
@@ -50,6 +54,10 @@ $logged_in_user = $_GET['name'];
                     if (!empty($_SESSION['addaccount_error'])) {
                         echo $_SESSION['addaccount_error'];
                         unset($_SESSION['addaccount_error']);
+                    }
+                    if (!empty($_SESSION['query'])) {
+                        echo $_SESSION['query'];
+                        unset($_SESSION['query']);
                     }
                     ?>
                 </span>
@@ -63,6 +71,7 @@ $logged_in_user = $_GET['name'];
                 </div>
                 <label>Account Type</label>
                 <select name="atype" id="atype">
+
                     <option value="">Choose One</option>
                     <option value="Librarian">Libarian</option>
                     <option value="Patron">Patrons</option>
@@ -84,6 +93,7 @@ $logged_in_user = $_GET['name'];
                 <div class="title">
                     <h2>Edit Account</h2>
                 </div>
+                
                 <span id="error">
                     <?php
 
@@ -93,15 +103,45 @@ $logged_in_user = $_GET['name'];
                     }
                     ?>
                 </span>
+                <div class="search-header">
+                    <form method="POST">
+                        <label>User:</label>
+                        <select name="atype" id="atype">
+                            <option value="">Choose One</option>
+                            <?php 
+                            $query = "SELECT * FROM librarian";
+                            $result = mysqli_query($conn, $query);
+                                if ($result->num_rows > 0) {
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo "<option value='".$row['libID']."'>".$row['libID']." - ".$row['name']."</option>";
+                                    }
+                                }else{
+                                    echo "<script>alert('No users currently registered');</script>";
+                                    header ("location:../pages/HSadministrator.php?name=$logged_in_user");
+                                }
+                            ?>
+                        </select>
+                        <button id="image-search" type="submit" name="submitsearch" class="searchbtn"><img src="../images/search.png" alt=""></button></input><br>
+                    </form>
+                </div>
                 <form action="../validation/HSeditaccount_validate.php" method="POST" class="register-form">
                     <?php
+                    if(isset($_POST['atype'])){
+                        $query = "SELECT * FROM librarian WHERE libID='".$_POST['atype']."'";
+                        $result = mysqli_query($conn, $query);
+                        $row = mysqli_fetch_assoc($result);
+                    }else
                     if (isset($_SESSION['email'])) {
                         $email = $_SESSION['email'];
                         $query = "SELECT * FROM librarian WHERE email='$email'";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
+                    } else {
+                        //echo "<script>alert('You have not login, please do so now!');</script>";
+                        //sleep(3);
+                        //header('location:HSlogin.php');
 
-
+                    }
                     ?>
                         <div class="input-group">
                             <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
@@ -119,12 +159,7 @@ $logged_in_user = $_GET['name'];
                             <button name="edit" id="edit" type="Submit" class="btn">Update</button>
                         </div>
                     <?php
-                    } else {
-                        //echo "<script>alert('You have not login, please do so now!');</script>";
-                        //sleep(3);
-                        //header('location:HSlogin.php');
-
-                    }
+                    
                     ?>
                 </form>
             </div>
