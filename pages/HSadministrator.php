@@ -124,24 +124,26 @@ $result = mysqli_query($conn, $query);
                         <button id="image-search" type="submit" name="submitsearch" class="searchbtn"><img src="../images/search.png" alt=""></button></input><br>
                     </form>
                 </div>
-                <form action="../validation/HSeditaccount_validate.php" method="POST" class="register-form">
-                    <?php
+                <?php echo "<form action='../validation/HSeditaccount_validate.php?name=$logged_in_user' method='POST' class='register-form'>";
+                    
                     if (isset($_POST['atype'])) {
                         $query = "SELECT * FROM librarian WHERE libID='" . $_POST['atype'] . "'";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
+                        $_SESSION['update']=$row['libID'];
                     } else
-                    if (isset($_SESSION['email'])) {
+                      {
                         $email = $_SESSION['email'];
                         $query = "SELECT * FROM librarian WHERE email='$email'";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
-                    } else {
+                        
+                    } //else {
                         //echo "<script>alert('You have not login, please do so now!');</script>";
                         //sleep(3);
                         //header('location:HSlogin.php');
 
-                    }
+                    //}
                     ?>
                     <div class="input-group">
                         <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
@@ -159,7 +161,7 @@ $result = mysqli_query($conn, $query);
                         <button name="edit" id="edit" type="Submit" class="btn">Update</button>
                     </div>
                     <?php
-
+                        
                     ?>
                 </form>
             </div>
@@ -197,30 +199,25 @@ $result = mysqli_query($conn, $query);
                         <button id="image-search" type="submit" name="submitsearch" class="searchbtn"><img src="../images/search.png" alt=""></button></input><br>
                     </form>
                 </div>
-                <form action="../validation/HSdeleteaccount_validate.php" method="POST" class="register-form">
-                <?php
+                <?php echo "<form action='../validation/HSdeleteaccount_validate.php?name=$logged_in_user' method='POST' class='register-form'>";
+                
                     if(isset($_POST['deleteatype'])){
                         $query = "SELECT * FROM librarian WHERE libID='".$_POST['deleteatype']."'";
                         $result = mysqli_query($conn, $query);
-                        $row = mysqli_fetch_assoc($result);
+                        $row1 = mysqli_fetch_assoc($result);
                     }else
-                    if (isset($_SESSION['email'])) {
+                     
                         $email = $_SESSION['email'];
                         $query = "SELECT * FROM librarian WHERE email='$email'";
                         $result = mysqli_query($conn, $query);
-                        $row = mysqli_fetch_assoc($result);
-                    } else {
-                        //echo "<script>alert('You have not login, please do so now!');</script>";
-                        //sleep(3);
-                        //header('location:HSlogin.php');
-
-                    }
+                        $row1 = mysqli_fetch_assoc($result);
+                    
                     ?>
                         <div class="input-group">
-                            <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
+                            <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row1['name'] ?>" required />
                         </div>
                         <div class="input-group">
-                            <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row['email'] ?>" required />
+                            <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row1['email'] ?>" required />
                         </div>
                         <div class="input-group">
                             <input name="password" id="password" type="password" placeholder="Password" minlenght="8" />
@@ -231,9 +228,7 @@ $result = mysqli_query($conn, $query);
                         <div class="input-group">
                             <button name="edit" id="edit" type="Submit" class="btn">Delete</button>
                         </div>
-                    <?php
-                   
-                    ?>
+                    
                 </form>
             </div>
         </div>
