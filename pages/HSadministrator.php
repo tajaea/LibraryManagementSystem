@@ -43,7 +43,7 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
         <div class="content">
-            
+
             <div class="register-section">
                 <div class="title">
                     <h2>Add Account</h2>
@@ -93,7 +93,7 @@ $result = mysqli_query($conn, $query);
                 <div class="title">
                     <h2>Edit Account</h2>
                 </div>
-                
+
                 <span id="error">
                     <?php
 
@@ -108,17 +108,17 @@ $result = mysqli_query($conn, $query);
                         <label>User:</label>
                         <select name="atype" id="atype">
                             <option value="">Choose One</option>
-                            <?php 
+                            <?php
                             $query = "SELECT * FROM librarian";
                             $result = mysqli_query($conn, $query);
-                                if ($result->num_rows > 0) {
-                                    while($row = mysqli_fetch_assoc($result)){
-                                        echo "<option value='".$row['libID']."'>".$row['libID']." - ".$row['name']."</option>";
-                                    }
-                                }else{
-                                    echo "<script>alert('No users currently registered');</script>";
-                                    header ("location:../pages/HSadministrator.php?name=$logged_in_user");
+                            if ($result->num_rows > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<option value='" . $row['libID'] . "'>" . $row['libID'] . " - " . $row['name'] . "</option>";
                                 }
+                            } else {
+                                echo "<script>alert('No users currently registered');</script>";
+                                header("location:../pages/HSadministrator.php?name=$logged_in_user");
+                            }
                             ?>
                         </select>
                         <button id="image-search" type="submit" name="submitsearch" class="searchbtn"><img src="../images/search.png" alt=""></button></input><br>
@@ -126,11 +126,11 @@ $result = mysqli_query($conn, $query);
                 </div>
                 <form action="../validation/HSeditaccount_validate.php" method="POST" class="register-form">
                     <?php
-                    if(isset($_POST['atype'])){
-                        $query = "SELECT * FROM librarian WHERE libID='".$_POST['atype']."'";
+                    if (isset($_POST['atype'])) {
+                        $query = "SELECT * FROM librarian WHERE libID='" . $_POST['atype'] . "'";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
-                    }else
+                    } else
                     if (isset($_SESSION['email'])) {
                         $email = $_SESSION['email'];
                         $query = "SELECT * FROM librarian WHERE email='$email'";
@@ -143,29 +143,29 @@ $result = mysqli_query($conn, $query);
 
                     }
                     ?>
-                        <div class="input-group">
-                            <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
-                        </div>
-                        <div class="input-group">
-                            <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row['email'] ?>" required />
-                        </div>
-                        <div class="input-group">
-                            <input name="password" id="password" type="password" placeholder="Password" minlenght="8" />
-                        </div>
-                        <div class="input-group">
-                            <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" minlenght="8" />
-                        </div>
-                        <div class="input-group">
-                            <button name="edit" id="edit" type="Submit" class="btn">Update</button>
-                        </div>
+                    <div class="input-group">
+                        <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
+                    </div>
+                    <div class="input-group">
+                        <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row['email'] ?>" required />
+                    </div>
+                    <div class="input-group">
+                        <input name="password" id="password" type="password" placeholder="Password" minlenght="8" />
+                    </div>
+                    <div class="input-group">
+                        <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" minlenght="8" />
+                    </div>
+                    <div class="input-group">
+                        <button name="edit" id="edit" type="Submit" class="btn">Update</button>
+                    </div>
                     <?php
-                    
+
                     ?>
                 </form>
             </div>
-            <div class="details-section">
+            <div class="delete-section">
                 <div class="title">
-                    <h2>Delete</h2>
+                    <h2>Delete Account</h2>
                 </div>
                 <span id="error">
                     <?php
