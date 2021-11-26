@@ -163,6 +163,54 @@ $result = mysqli_query($conn, $query);
                     ?>
                 </form>
             </div>
+            <div class="details-section">
+                <div class="title">
+                    <h2>Delete Account</h2>
+                </div>
+                <span id="error">
+                    <?php
+
+                    if (!empty($_SESSION['deleteaccount_error'])) {
+                        echo $_SESSION['deleteaccount_error'];
+                        unset($_SESSION['deleteaccount_error']);
+                    }
+                    ?>
+                </span>
+                <form action="../validation/HSdeleteaccount_validate.php" method="POST" class="register-form">
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        $email = $_SESSION['email'];
+                        $query = "SELECT * FROM librarian WHERE email='$email'";
+                        $result = mysqli_query($conn, $query);
+                        $row = mysqli_fetch_assoc($result);
+
+
+                    ?>
+                        <div class="input-group">
+                            <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
+                        </div>
+                        <div class="input-group">
+                            <input name="email" id="email" type="text" placeholder="Email" value="<?php echo $row['email'] ?>" required />
+                        </div>
+                        <div class="input-group">
+                            <input name="password" id="password" type="password" placeholder="Password" minlenght="8" />
+                        </div>
+                        <div class="input-group">
+                            <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" minlenght="8" />
+                        </div>
+                        <div class="input-group">
+                            <button name="edit" id="edit" type="Submit" class="btn">Delete</button>
+                        </div>
+                    <?php
+                    } else {
+                        //echo "<script>alert('You have not login, please do so now!');</script>";
+                        //sleep(3);
+                        //header('location:HSlogin.php');
+
+                    }
+                    ?>
+                </form>
+            </div>
         </div>
     </div>
 
