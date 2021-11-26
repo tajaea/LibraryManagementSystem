@@ -2,6 +2,7 @@
 session_start();
 require_once '../validation/HighSchoolBooks_DB.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/HSguestbookdetails.css" />
-    <title>Guest Dashboard</title>
+    <title>Cart</title>
 </head>
 
 <body>
@@ -40,7 +41,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
                         <button class="searchbutton" type="submit"><img src="../images/search.png" alt=""></button>
                     </div>-->
                     <div class="user">
-                        <p>Welcome, Guest</p>
+                        <p>Cart</p>
                         <div class="user-image">
                             <img src="../images/programmer.png" alt="">
                         </div>
@@ -48,7 +49,7 @@ require_once '../validation/HighSchoolBooks_DB.php';
                 </div>
             </div>
             <div class="content">
-                <table class="table">
+            <table class="table">
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -69,33 +70,40 @@ require_once '../validation/HighSchoolBooks_DB.php';
                         $result = mysqli_query($conn, $query);
                         if ($result->num_rows > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                if(isset($_SESSION[$row]))
-                                echo "<tr>";
-                                echo "<td>";
-                                echo $row['title'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['author'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['year'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['isbn'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['callno'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['subjectarea'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['quantity'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo "<img src = '../files/" . $row['bookcover'] . "' alt = '' >";
-                                echo "</td>";
-                                echo "</tr>";
+                                $title=$row['title'];
+                                
+                                if(isset($_SESSION[$title])){
+                                    echo $_SESSION[$title];
+                                    echo "<tr>";
+                                    echo "<td>";
+                                    echo $row['title'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['author'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['year'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['isbn'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['callno'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['subjectarea'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $row['quantity'];
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo "<img src = '../files/" . $row['bookcover'] . "' alt = '' >";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                    unset($_SESSION[$title]);
+                                    
+                                }
+                                
                             }
                         } else {
                             echo "<script>alert('0 results')</script>";
