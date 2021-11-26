@@ -48,64 +48,62 @@ require_once '../validation/HighSchoolBooks_DB.php';
                 </div>
             </div>
             <div class="content">
-                <div class="tablediv">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Year Published</th>
-                                <th>ISBN</th>
-                                <th>Call Number</th>
-                                <th>Subject Area</th>
-                                <th>No. of Copies</th>
-                                <th>Book Cover</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Year Published</th>
+                            <th>ISBN</th>
+                            <th>Call Number</th>
+                            <th>Subject Area</th>
+                            <th>No. of Copies</th>
+                            <th>Book Cover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                            <?php
-                            $name = $_GET['name'];
-                            $query = "SELECT * FROM book WHERE title= '$name'";
-                            $result = mysqli_query($conn, $query);
-                            if ($result->num_rows > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
+                        <?php
+                        $name = $_GET['name'];
+                        $query = "SELECT * FROM book WHERE title= '$name'";
+                        $result = mysqli_query($conn, $query);
+                        if ($result->num_rows > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
 
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo $row['title'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row['author'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row['year'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row['isbn'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row['callno'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row['subjectarea'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row['quantity'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo "<img src = '../files/" . $row['bookcover'] . "' alt = '' >";
-                                    echo "</td>";
-                                    echo "</tr>";
-                                }
-                            } else {
-                                echo "<script>alert('0 results')</script>";
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $row['title'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['author'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['year'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['isbn'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['callno'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['subjectarea'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['quantity'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo "<img src = '../files/" . $row['bookcover'] . "' alt = '' >";
+                                echo "</td>";
+                                echo "</tr>";
                             }
-                            ?>
+                        } else {
+                            echo "<script>alert('0 results')</script>";
+                        }
+                        ?>
 
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </form>
