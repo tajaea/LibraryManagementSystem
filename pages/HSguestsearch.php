@@ -54,7 +54,7 @@ $result = mysqli_query($conn, $query);
             <div class="content">
                 <div class="available">
                     <div class="search-header">
-                        <label>Search Type</label>
+                        <label>Search Type:</label>
                         <select name="atype" id="atype">
                             <option value="">Choose One</option>
                             <option value="Title">Title</option>
