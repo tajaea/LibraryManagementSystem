@@ -176,15 +176,45 @@ $result = mysqli_query($conn, $query);
                     }
                     ?>
                 </span>
+                <div class="search-header">
+                    <form method="POST">
+                        <label>User:</label>
+                        <select name="deleteatype" id="deleteatype">
+                            <option value="">Choose One</option>
+                            <?php 
+                            $query = "SELECT * FROM librarian";
+                            $result = mysqli_query($conn, $query);
+                                if ($result->num_rows > 0) {
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo "<option value='".$row['libID']."'>".$row['libID']." - ".$row['name']."</option>";
+                                    }
+                                }else{
+                                    echo "<script>alert('No users currently registered');</script>";
+                                    header ("location:../pages/HSadministrator.php?name=$logged_in_user");
+                                }
+                            ?>
+                        </select>
+                        <button id="image-search" type="submit" name="submitsearch" class="searchbtn"><img src="../images/search.png" alt=""></button></input><br>
+                    </form>
+                </div>
                 <form action="../validation/HSdeleteaccount_validate.php" method="POST" class="register-form">
-                    <?php
+                <?php
+                    if(isset($_POST['deleteatype'])){
+                        $query = "SELECT * FROM librarian WHERE libID='".$_POST['deleteatype']."'";
+                        $result = mysqli_query($conn, $query);
+                        $row = mysqli_fetch_assoc($result);
+                    }else
                     if (isset($_SESSION['email'])) {
                         $email = $_SESSION['email'];
                         $query = "SELECT * FROM librarian WHERE email='$email'";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
+                    } else {
+                        //echo "<script>alert('You have not login, please do so now!');</script>";
+                        //sleep(3);
+                        //header('location:HSlogin.php');
 
-
+                    }
                     ?>
                         <div class="input-group">
                             <input name="name" id="name" type="text" placeholder="Name" value="<?php echo $row['name'] ?>" required />
@@ -202,12 +232,7 @@ $result = mysqli_query($conn, $query);
                             <button name="edit" id="edit" type="Submit" class="btn">Delete</button>
                         </div>
                     <?php
-                    } else {
-                        //echo "<script>alert('You have not login, please do so now!');</script>";
-                        //sleep(3);
-                        //header('location:HSlogin.php');
-
-                    }
+                   
                     ?>
                 </form>
             </div>
